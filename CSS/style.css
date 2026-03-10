@@ -190,3 +190,67 @@ button:active {
         gap: 15px;
     }
 }
+/* ==========================================
+   OPTIMIZACIÓN MÓVIL (Smartphones y Tablets)
+   ========================================== */
+
+@media (max-width: 600px) {
+    /* 1. Aprovechar mejor el espacio de la pantalla */
+    body {
+        padding: 10px; 
+    }
+
+    main {
+        padding: 15px; /* Menos padding interno para que el contenido respire */
+        border-width: 2px;
+    }
+
+    /* 2. Ajustar tipografías gigantes */
+    h1 {
+        font-size: 1.8em;
+    }
+    
+    h2 {
+        font-size: 1.4em;
+    }
+
+    /* 3. Mejorar la "Zona Táctil" (Tap Targets) para dedos */
+    input[type="text"], 
+    select, 
+    button {
+        padding: 15px; /* Hacemos los elementos más altos para que sea fácil tocarlos */
+        font-size: 1.05em;
+    }
+
+    /* 4. Cuadrícula de Atributos perfecta para móvil (2 columnas) */
+    .stats-grid {
+        /* En vez de que queden chuecos, forzamos exactamente 2 columnas iguales */
+        grid-template-columns: repeat(2, 1fr); 
+        gap: 10px;
+    }
+
+    .stats-grid p {
+        padding: 10px 5px; /* Reducimos el margen interno de cada caja */
+    }
+
+    .stats-grid span {
+        font-size: 1.6em; /* Bajamos un poco el tamaño de los números grandes */
+    }
+
+    /* 5. Apilar botones inferiores */
+    #character-actions {
+        flex-direction: column; /* Ponemos el botón Cargar debajo del de Guardar */
+        gap: 10px;
+    }
+
+    /* 6. Ajustar las tarjetas de la Taberna */
+    .char-card {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+
+    .char-card button {
+        width: 100%; /* Que el botón "Desterrar" ocupe todo el ancho en móvil */
+    }
+}
