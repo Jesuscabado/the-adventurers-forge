@@ -156,6 +156,25 @@ function initChart() {
     });
 }
 
+// ==========================================
+// --- 5. FUNCIONES AUXILIARES DEL DOM ---
+// ==========================================
+
+// Esta es la función que te faltaba: se encarga de pintar los números en el HTML
+function updateDOMStats() {
+    const statsList = ['str', 'dex', 'con', 'int', 'wis', 'cha'];
+    
+    statsList.forEach(stat => {
+        const score = myCharacter.stats[stat];
+        const mod = myCharacter.getModifier(score);
+        
+        // Actualizamos el número grande en el HTML
+        document.getElementById(`stat-${stat}`).textContent = score;
+        // Actualizamos el modificador pequeño en el HTML
+        document.getElementById(`mod-${stat}`).textContent = `(${mod})`;
+    });
+}
+
 // Función para actualizar el gráfico cuando lancemos los dados
 function updateChart(stats) {
     // Le pasamos los nuevos valores al gráfico
