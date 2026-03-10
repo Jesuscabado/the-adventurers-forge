@@ -1,0 +1,170 @@
+/* ==========================================
+   VARIABLES DE COLOR (Estilo RPG Dark Fantasy)
+   ========================================== */
+:root {
+    --bg-dark: #121212;
+    --panel-bg: #1e1e1e;
+    --text-light: #e0d8c0; /* Color pergamino viejo */
+    --gold-accent: #cba153; /* Oro envejecido */
+    --gold-hover: #ebd59b;
+    --blood-red: #8a0303;
+    
+    --font-title: 'MedievalSharp', cursive;
+    --font-body: 'Merriweather', serif;
+}
+
+/* ==========================================
+   ESTILOS GENERALES
+   ========================================== */
+body {
+    background-color: var(--bg-dark);
+    background-image: radial-gradient(circle at center, #2a2a2a 0%, #121212 100%);
+    color: var(--text-light);
+    font-family: var(--font-body);
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+h1, h2, h3 {
+    font-family: var(--font-title);
+    color: var(--gold-accent);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+    letter-spacing: 1px;
+    text-align: center;
+}
+
+header {
+    margin-bottom: 30px;
+    border-bottom: 2px solid var(--gold-accent);
+    padding-bottom: 10px;
+    width: 100%;
+    max-width: 800px;
+}
+
+main {
+    background-color: var(--panel-bg);
+    max-width: 800px;
+    width: 100%;
+    padding: 30px;
+    border: 3px solid var(--gold-accent);
+    border-radius: 8px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.7), inset 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+hr {
+    border: 0;
+    height: 1px;
+    background-image: linear-gradient(to right, transparent, var(--gold-accent), transparent);
+    margin: 30px 0;
+}
+
+/* ==========================================
+   FORMULARIOS (Inputs y Selects)
+   ========================================== */
+section > div {
+    margin-bottom: 15px;
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    font-family: var(--font-title);
+    color: var(--gold-accent);
+    margin-bottom: 5px;
+    font-size: 1.1em;
+}
+
+input[type="text"], select {
+    background-color: #0a0a0a;
+    color: var(--text-light);
+    border: 1px solid var(--gold-accent);
+    padding: 10px;
+    font-family: var(--font-body);
+    font-size: 1em;
+    border-radius: 4px;
+    outline: none;
+    transition: box-shadow 0.3s ease;
+}
+
+input[type="text"]:focus, select:focus {
+    box-shadow: 0 0 8px var(--gold-accent);
+}
+
+/* ==========================================
+   BOTONES
+   ========================================== */
+button {
+    background: linear-gradient(to bottom, #3a3a3a, #1a1a1a);
+    color: var(--gold-accent);
+    font-family: var(--font-title);
+    font-size: 1.2em;
+    padding: 12px 20px;
+    border: 2px solid var(--gold-accent);
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    text-shadow: 1px 1px 2px black;
+    margin: 10px 0;
+    width: 100%;
+}
+
+button:hover {
+    background: linear-gradient(to bottom, var(--blood-red), #5a0000);
+    color: var(--gold-hover);
+    border-color: var(--gold-hover);
+    transform: scale(1.02);
+}
+
+button:active {
+    transform: scale(0.98);
+}
+
+/* ==========================================
+   CUADRÍCULA DE ATRIBUTOS (Stats)
+   ========================================== */
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.stats-grid p {
+    background-color: #0f0f0f;
+    border: 1px solid #444;
+    padding: 15px;
+    text-align: center;
+    border-radius: 5px;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-bottom: 3px solid var(--gold-accent);
+}
+
+.stats-grid span {
+    font-family: var(--font-title);
+    font-size: 2em;
+    color: white;
+    margin-top: 5px;
+}
+
+.stats-grid small {
+    color: var(--gold-accent);
+    font-size: 1.1em;
+}
+
+/* ==========================================
+   SECCIÓN DE ACCIONES (Guardar/Cargar)
+   ========================================== */
+#character-actions {
+    display: flex;
+    gap: 15px;
+}
+
+#character-actions button {
+    flex: 1;
+}
