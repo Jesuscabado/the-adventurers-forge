@@ -215,3 +215,25 @@ btnRollStats.addEventListener('click', () => {
     updateDOMStats();               // Pinta números en el HTML
     updateChart(myCharacter.stats); // Anima el gráfico
 });
+// ==========================================
+// --- 7. BOTONES DE GUARDADO Y CARGA ---
+// ==========================================
+
+// 1. PRIMERO capturamos los botones del HTML (¡Esto es lo que faltaba!)
+const btnSave = document.getElementById('btn-save');
+const btnLoad = document.getElementById('btn-load');
+
+// 2. LUEGO le añadimos el evento al botón Guardar
+btnSave.addEventListener('click', () => {
+    // Capturamos el nombre
+    const nameInput = document.getElementById('char-name').value;
+    myCharacter.name = nameInput !== "" ? nameInput : "Héroe Anónimo";
+
+    // Llamamos a la función de tu nuevo archivo storage.js
+    saveCharacterToStorage(myCharacter);
+});
+
+// 3. Y el evento al botón Cargar (Taberna)
+btnLoad.addEventListener('click', () => {
+    window.location.href = 'taberna.html'; 
+});
