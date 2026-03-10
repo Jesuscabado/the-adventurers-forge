@@ -28,7 +28,7 @@ body {
     align-items: center;
 }
 
-h1, h2, h3 {
+h1, h2, h3, p{
     font-family: var(--font-title);
     color: var(--gold-accent);
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
@@ -167,4 +167,26 @@ button:active {
 
 #character-actions button {
     flex: 1;
+}
+/* ==========================================
+   TARJETAS DE LA TABERNA
+   ========================================== */
+.char-card {
+    border: 2px solid var(--gold-accent);
+    padding: 15px;
+    margin-bottom: 20px;
+    background-color: #0f0f0f;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.5);
+}
+
+@media (max-width: 600px) {
+    .char-card {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
 }
