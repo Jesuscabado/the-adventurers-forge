@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>El Compendio del Rol - Menú Principal</title>
+    
+    <link rel="stylesheet" href="/CSS/style.css">
+    <link rel="stylesheet" href="/CSS/menu.css">
+</head>
+<body>
+
+    <rpg-navbar ruta-base="."></rpg-navbar>
+
+    <header>
+        <h1>El Compendio del Rol</h1>
+        <p class="subtitle">Elige el universo en el que deseas adentrarte hoy.</p>
+    </header>
+
+    <main class="menu-main">
+        <p class="menu-intro">
+            Bienvenido al sistema de creación de personajes. Selecciona el módulo que necesitas para tu próxima partida:
+        </p>
+        
+        <div class="menu-container">
+            <div class="menu-card" onclick="window.location.href='HTML/dnd.html'">
+                <h2>🐉 D&D 5e</h2>
+                <p>Fantasía heroica. Crea tu aventurero conectándote a la API oficial, lanza los dados y visualiza tus estadísticas.</p>
+                <button>Entrar a la Forja</button>
+            </div>
+
+            <div class="menu-card" onclick="window.location.href='HTML/medieval.html'">
+                <h2>📜 Año 1350</h2>
+                <p>Rol histórico realista. Sobrevive a la Baja Edad Media con un sistema basado puramente en la narrativa y el estatus social.</p>
+                <button>Abrir el Registro</button>
+            </div>
+        </div>
+    </main>
+
+    <script src="/JS/navBar.js"></script>
+</body>
+</html>
