@@ -22,7 +22,8 @@ body {
     color: var(--text-light);
     font-family: var(--font-body);
     margin: 0;
-    padding: 20px;
+    /* ¡Añade esta línea para que el navbar no tape el contenido! */
+    padding: 70px 20px 20px 20px; 
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -181,6 +182,55 @@ button:active {
     justify-content: space-between;
     align-items: center;
     box-shadow: 0 4px 8px rgba(0,0,0,0.5);
+}
+/* ==========================================
+   NAVBAR FIJO (Navegación Global)
+   ========================================== */
+.rpg-navbar {
+    position: fixed; /* Lo clava en la pantalla */
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #121212;
+    border-bottom: 2px solid var(--gold-accent);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 12px 0;
+    z-index: 1000; /* Asegura que siempre esté por encima del resto de cosas */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.9);
+}
+
+.rpg-navbar a {
+    color: var(--text-light);
+    text-decoration: none;
+    font-family: var(--font-title);
+    font-size: 1.1em;
+    margin: 0 15px;
+    padding: 5px 10px;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+.rpg-navbar a:hover {
+    color: var(--gold-hover);
+    background-color: rgba(203, 161, 83, 0.15); /* Brillo sutil de fondo */
+    text-shadow: 0 0 8px var(--gold-accent);
+}
+
+/* Ajuste móvil para el Navbar */
+@media (max-width: 600px) {
+    .rpg-navbar {
+        flex-wrap: wrap; /* Si no caben, bajan a la siguiente línea */
+        padding: 8px 0;
+    }
+    .rpg-navbar a {
+        margin: 5px 10px;
+        font-size: 0.95em;
+    }
+    body {
+        padding-top: 100px; /* Más espacio en móvil porque el navbar será más alto */
+    }
 }
 
 @media (max-width: 600px) {
