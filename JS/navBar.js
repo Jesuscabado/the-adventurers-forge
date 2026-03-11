@@ -19,7 +19,7 @@ class RpgNavbar extends HTMLElement {
         this.innerHTML = `
             <nav class="rpg-navbar">
                 <a href="${linkIndex}">🏰 Menú Principal</a>
-                <a href="${linkDnd}">🐉 D&D 5e</a>
+                <a href="${linkDnd}">🐉 Stronger Things</a>
                 <a href="${linkMedieval}">📜 Año 1350</a>
             </nav>
         `;

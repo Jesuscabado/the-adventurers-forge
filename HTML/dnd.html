@@ -1,17 +1,18 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Creador de Personajes - D&D </title>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <link rel="stylesheet" href="../CSS/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=MedievalSharp&family=Merriweather:ital,wght@0,300;0,700;1,300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../CSS/style.css">
 </head>
+
 <body>
-<rpg-navbar ruta-base=".."></rpg-navbar>
+    <rpg-navbar ruta-base=".."></rpg-navbar>
     <header>
         <h1>Forja de Héroes - D&D</h1>
         <p>Crea tu personaje</p>
@@ -24,7 +25,7 @@
                 <label for="char-name">Nombre del Personaje:</label>
                 <input type="text" id="char-name" placeholder="Ej. Gandalf, Drizzt...">
             </div>
-            
+
             <div>
                 <label for="race-select">Elige tu Raza:</label>
                 <select id="race-select">
@@ -45,7 +46,7 @@
         <section id="character-stats">
             <h2>2. Atributos</h2>
             <button id="btn-roll-stats">Lanzar Dados (Atributos Aleatorios)</button>
-            
+
             <div class="stats-grid">
                 <p>Fuerza (STR): <span id="stat-str">10</span> <small id="mod-str">(+0)</small></p>
                 <p>Destreza (DEX): <span id="stat-dex">10</span> <small id="mod-dex">(+0)</small></p>
@@ -68,8 +69,8 @@
         <hr>
 
         <section id="character-actions">
-            <button id="btn-save">💾 Guardar Personaje (LocalStorage)</button>
-            <button id="btn-load">📂 Cargar Personaje</button>
+            <button id="btn-save">💾 Reclutar Personaje</button>
+            <button id="btn-load">📂 Visita la taberna</button>
         </section>
 
     </main>
@@ -77,4 +78,5 @@
     <script src="../JS/app.js"></script>
     <script src="../JS/navBar.js"></script>
 </body>
+
 </html>
