@@ -5,24 +5,37 @@
 class RpgNavbar extends HTMLElement {
     
     connectedCallback() {
-        // 1. Leemos el atributo 'ruta-base' desde el HTML. 
-        // Si no se lo pasamos, asumimos que estamos en la raíz ('.')
         const base = this.getAttribute('ruta-base') || '.';
-
-        // 2. Construimos las rutas dinámicas usando esa base
-        // Si base es '.', irá a './index.html'. Si es '..', irá a '../index.html'
         const linkIndex = `${base}/index.html`;
         const linkDnd = `${base}/HTML/dnd.html`;
         const linkMedieval = `${base}/HTML/medieval.html`;
 
-        // 3. Inyectamos el HTML
+        // 1. Añadimos el botón hamburguesa y un contenedor "nav-links"
         this.innerHTML = `
             <nav class="rpg-navbar">
-                <a href="${linkIndex}">🏰 Menú Principal</a>
-                <a href="${linkDnd}">🐉 Stronger Things</a>
-                <a href="${linkMedieval}">📜 Año 1350</a>
+                <div class="hamburger-btn">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <div class="nav-links">
+                    <a href="${linkIndex}">🏰 Menú Principal</a>
+                    <a href="${linkDnd}">🐉 D&D 5e</a>
+                    <a href="${linkMedieval}">📜 Año 1350</a>
+                </div>
             </nav>
         `;
+
+        // 2. Lógica para abrir/cerrar el menú en móviles
+        const btn = this.querySelector('.hamburger-btn');
+        const links = this.querySelector('.nav-links');
+
+        btn.addEventListener('click', () => {
+            // Alterna la clase "active" para mostrar/ocultar los enlaces
+            links.classList.toggle('active');
+            // Alterna la clase "open" para animar las rayitas (opcional pero queda genial)
+            btn.classList.toggle('open'); 
+        });
     }
 }
 
