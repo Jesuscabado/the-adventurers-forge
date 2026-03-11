@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ten Candles - Creación de Sobrevivientes</title>
+    <link rel="stylesheet" href="../CSS/style.css">
+</head>
+<body style="background-image: radial-gradient(circle at center, #1a0b0b 0%, #000000 100%);"> <header>
+        <h1 style="color: #ffaa00; text-shadow: 0 0 10px #ff4400;">Diez Velas</h1>
+        <p style="font-style: italic;">El mundo está a oscuras. Y todos van a morir.</p>
+    </header>
+
+    <main style="border-color: #555;">
+        <section>
+            <h2>Tu Sobreviviente</h2>
+            
+            <div>
+                <label>Nombre:</label>
+                <input type="text" id="tc-name" placeholder="Ej. Marcus">
+            </div>
+
+            <div>
+                <label>Concepto (¿Quién eres?):</label>
+                <input type="text" id="tc-concept" placeholder="Ej. Un médico cínico que perdió la fe">
+            </div>
+
+            <hr style="background-image: linear-gradient(to right, transparent, #ffaa00, transparent);">
+
+            <h2>Tus Rasgos</h2>
+            <div style="display: flex; gap: 15px; flex-wrap: wrap;">
+                <div style="flex: 1; min-width: 200px;">
+                    <label>Virtud (Positivo):</label>
+                    <input type="text" id="tc-virtue" placeholder="Ej. Valiente, Ingenioso...">
+                </div>
+                <div style="flex: 1; min-width: 200px;">
+                    <label>Vicio (Negativo):</label>
+                    <input type="text" id="tc-vice" placeholder="Ej. Egoísta, Cobarde...">
+                </div>
+            </div>
+
+            <hr style="background-image: linear-gradient(to right, transparent, #ffaa00, transparent);">
+
+            <h2>La Narrativa</h2>
+            <div>
+                <label>Tu Momento (Encontraré esperanza cuando...):</label>
+                <input type="text" id="tc-moment" placeholder="Ej. Logre comunicarme con mi hija por radio">
+            </div>
+
+            <div>
+                <label>Al Límite (Alguien me ha visto...):</label>
+                <input type="text" id="tc-brink" placeholder="Ej. Abandonar a alguien para salvarme yo">
+            </div>
+        </section>
+
+        <section id="character-actions">
+            <button id="btn-save-tc" style="background: linear-gradient(to bottom, #4a2000, #1a0000); border-color: #ffaa00;">🕯️ Guardar Sobreviviente</button>
+            <button onclick="window.location.href='index.html'">Volver a D&D</button>
+        </section>
+    </main>
+
+    <script src="../JS/tenCandles.js"></script>
+</body>
+</html>
