@@ -262,28 +262,63 @@ button:active {
 .form-group {
     margin-top: 15px;
 }
-/* Ajuste móvil para el Navbar */
-@media (max-width: 600px) {
-    .rpg-navbar {
-        flex-wrap: wrap; /* Si no caben, bajan a la siguiente línea */
-        padding: 8px 0;
-    }
-    .rpg-navbar a {
-        margin: 5px 10px;
-        font-size: 0.95em;
-    }
-    body {
-        padding-top: 100px; /* Más espacio en móvil porque el navbar será más alto */
-    }
+/* ==========================================
+   NAVBAR FIJO Y MENÚ HAMBURGUESA
+   ========================================== */
+.rpg-navbar {
+    position: fixed; 
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #121212;
+    border-bottom: 2px solid var(--gold-accent);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 12px 20px;
+    z-index: 1000; 
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.9);
+    box-sizing: border-box; /* Evita que el padding rompa el ancho */
 }
 
-@media (max-width: 600px) {
-    .char-card {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 15px;
-    }
+.nav-links {
+    display: flex;
 }
+
+.nav-links a {
+    color: var(--text-light);
+    text-decoration: none;
+    font-family: var(--font-title);
+    font-size: 1.1em;
+    margin: 0 15px;
+    padding: 5px 10px;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: var(--gold-hover);
+    background-color: rgba(203, 161, 83, 0.15);
+    text-shadow: 0 0 8px var(--gold-accent);
+}
+
+/* Ocultar el botón en PC por defecto */
+.hamburger-btn {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 6px;
+}
+
+/* Estilo de las 3 rayitas */
+.hamburger-btn span {
+    width: 30px;
+    height: 3px;
+    background-color: var(--gold-accent);
+    border-radius: 3px;
+    transition: all 0.3s ease;
+}
+
 /* ==========================================
    OPTIMIZACIÓN MÓVIL (Smartphones y Tablets)
    ========================================== */
@@ -301,6 +336,7 @@ button:active {
 
     /* 2. Ajustar tipografías gigantes */
     h1 {
+        padding: auto;
         font-size: 1.8em;
     }
     
@@ -346,5 +382,44 @@ button:active {
 
     .char-card button {
         width: 100%; /* Que el botón "Desterrar" ocupe todo el ancho en móvil */
+    }
+    .rpg-navbar {
+        justify-content: flex-end; /* Mueve el botón a la derecha */
+    }
+
+    .hamburger-btn {
+        display: flex; /* Mostramos la hamburguesa */
+    }
+
+    .nav-links {
+        position: absolute;
+        top: 100%; /* Se coloca justo debajo de la barra negra */
+        left: 0;
+        width: 100%;
+        background-color: #121212;
+        flex-direction: column;
+        align-items: center;
+        border-bottom: 2px solid var(--gold-accent);
+        
+        /* Oculto por defecto con una animación suave */
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.4s ease-in-out;
+    }
+
+    /* Cuando la clase .active se añade por JavaScript, el menú crece */
+    .nav-links.active {
+        max-height: 300px; 
+        padding-bottom: 15px;
+    }
+
+    .nav-links a {
+        margin: 15px 0;
+        display: block;
+    }
+
+    /* Ajuste de margen para que el H1 no quede tapado */
+    body {
+        padding-top: 80px; 
     }
 }
