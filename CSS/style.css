@@ -217,7 +217,51 @@ button:active {
     background-color: rgba(203, 161, 83, 0.15); /* Brillo sutil de fondo */
     text-shadow: 0 0 8px var(--gold-accent);
 }
+/* ==========================================
+   ESTILOS DE FORMULARIOS Y CUADRÍCULAS (Reutilizables)
+   ========================================== */
 
+.rpg-subtitle {
+    font-style: italic;
+}
+
+/* Estilo unificado para inputs numéricos y textareas */
+.rpg-input {
+    padding: 10px;
+    border-radius: 4px;
+    border: 1px solid var(--gold-accent);
+    background-color: #0a0a0a;
+    color: var(--text-light);
+    font-family: var(--font-body);
+}
+
+.rpg-textarea {
+    width: 100%;
+    resize: vertical;
+    box-sizing: border-box; 
+}
+
+/* Layout para cuadrículas (Ej: Apariencia física) */
+.form-flex-row {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.form-flex-col {
+    flex: 1;
+    min-width: 150px;
+}
+
+.form-hint {
+    color: gray;
+    margin-top: 5px;
+    display: block; 
+}
+
+.form-group {
+    margin-top: 15px;
+}
 /* Ajuste móvil para el Navbar */
 @media (max-width: 600px) {
     .rpg-navbar {
