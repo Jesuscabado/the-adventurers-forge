@@ -7,8 +7,6 @@ Aplicación web interactiva desarrollada en **Vanilla JavaScript** que funciona 
 
 Este proyecto fue construido para aplicar conceptos avanzados de desarrollo frontend sin el uso de frameworks, destacando el uso de Web Components, Programación Orientada a Objetos (POO), consumo de APIs externas y persistencia de datos estructurada.
 
-> **Nota:** Puedes insertar aquí una captura de pantalla del menú principal de tu aplicación usando `![Screenshot](ruta-de-tu-imagen.png)`
-
 ## Características Principales
 
 Este proyecto cumple con los siguientes hitos técnicos:
